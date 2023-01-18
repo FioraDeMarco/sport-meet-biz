@@ -1,122 +1,17 @@
-import React, { useState } from 'react';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import React from 'react';
+import { ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
-import {  Button, Typography, Stepper, Step, Card,Grid, CircularProgress, StepLabel, CardContent,Box}  from "@mui/material";
-import Summary from './Summary';
-
-
-
+import {  Typography, Box}  from "@mui/material";
+import './App.css'
+import { Ladder, LadderStep} from '../components/FormikForm';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-
-
-const Ladder = ({ children, initialValues, onSubmit }) => {
-  const [stepNumber, setStepNumber] = useState(0);
-  const stepss = React.Children.toArray(children);
-  const [snapshot, setSnapshot] = useState(initialValues);
-  const [summary, setSummary] = useState({})
-
- 
-
-  const step = stepss[stepNumber];
-  const totalSteps = stepss.length;
-  const isLastStep = stepNumber === totalSteps - 1;
-
-  const next = values => {
-    setSnapshot(values);
-    setStepNumber(Math.min(stepNumber + 1, totalSteps - 1));
-  };
-
-  const previous = values => {
-    setSnapshot(values);
-    setStepNumber(Math.max(stepNumber - 1, 0));
-  };
-
-  const handleSubmit = async (values, bag) => {
-    console.log('bag', bag, 'values', values)
-    if (step.props.onSubmit) {
-      await step.props.onSubmit(values, bag);
-    }
-    if (isLastStep) {
-      setSummary({...summary, snapshot})
-      return onSubmit(values, bag);
-    } else {
-      bag.setTouched({});
-      console.log('bag.setTouched', bag.setTouched({}))
-      next(values);
-    }
-  };
-console.log('snapshot', snapshot)
-console.log('children', children)
-console.log('stepss', stepss)
-console.log('totalSteps', totalSteps)
-console.log('summary', summary)
-  return (
-    <Card>
-      <CardContent>
-     
-        <Typography align='center' variant='inherit'>
-    <Formik
-      fullWidth
-      initialValues={snapshot}
-      onSubmit={handleSubmit}
-      validationSchema={step.props.validationSchema}
-    >
-      {formik => (
-        <Stepper alternativeLabel activeStep={step} align='center'>
-        <Form>
-          <h4>
-            Step {stepNumber + 1} of {totalSteps}
-          </h4>
-          {step}
-          <Box paddingBottom={2} align='center'>
-          {isLastStep ? (
-             <Summary {...snapshot} />
-              ): ''}
-              <Button   type='submit' 
-        color='primary' 
-        variant='contained' 
-        fullWidth
-        style={{marginTop: 30}} disabled={formik.isSubmitting} type="submit">
-                {isLastStep ? 'Submit' : 'Next'}
-              </Button>
-           
-            <div>
-            {stepNumber > 0 && (
-              <Button   type='submit' 
-              color='primary' 
-              variant='contained' 
-              fullWidth
-              style={{marginTop: 30}} onClick={() => previous(formik.values)} type="button">
-                Back
-              </Button>
-            )}
-          
-            </div>
-            </Box>
-
-        </Form>
-        </Stepper>
-      )}
-    </Formik>
-    </Typography>
-    </CardContent>
-    </Card>
-  );
-};
-
-const LadderStep = ({ children }) => children;
-
-
 const App = () => (
-<>
-
-
-<Card>
-  <CardContent>
+<div align='center' variant='inherit'>
   <Typography align='center' variant='inherit'>
     <h1>Open Sponsorship</h1>
+    <h3>Where sports come to do business</h3>
     <Ladder
       initialValues={{
         email: '',
@@ -128,7 +23,6 @@ const App = () => (
         location: '',
         team: '',
         about: '',
-
 
       }}
       onSubmit={async values =>
@@ -147,9 +41,9 @@ const App = () => (
           gender: Yup.string().required('required'),
         })}
       >
-        <div>
+
           <label htmlFor="firstName">First Name</label>
-          <Box paddingBottom={2} align='center'>
+          <Box paddingBottom={2}>
           <Field
             autoComplete="given-name"
             component="input"
@@ -161,8 +55,7 @@ const App = () => (
           />
           <ErrorMessage className="error" component="div" name="firstName" />
                </Box>
-        </div>
-        <div>
+     
           <label htmlFor="lastName">Last Name</label>
           <Box paddingBottom={2}>
           <Field
@@ -176,8 +69,6 @@ const App = () => (
               
           <ErrorMessage className="error" component="div" name="lastName" />
           </Box>
-        </div>
-        <div>
           <label htmlFor="sport">Sport</label>
           <Box paddingBottom={2}>
           <Field
@@ -190,8 +81,6 @@ const App = () => (
           />
           <ErrorMessage className="error" component="div" name="sport" />
                </Box>
-        </div>
-        <div>
           <label htmlFor="gender">Gender</label>
           <Box paddingBottom={2}>
           <Field
@@ -204,8 +93,6 @@ const App = () => (
           />
           <ErrorMessage className="error" component="div" name="gender" />
                </Box>
-        </div>
-        <div>
           <label htmlFor="location">Location</label>
           <Box paddingBottom={2}>
           <Field
@@ -218,7 +105,6 @@ const App = () => (
           />
           <ErrorMessage className="error" component="div" name="location" />
                </Box>
-        </div>
       </LadderStep>
       </Typography>
       <LadderStep
@@ -233,7 +119,7 @@ const App = () => (
 
         })}
       >
-        <div>
+
           <label htmlFor="dateOfBirth">Date of Birth</label>
           <Box paddingBottom={2}>
           <Field
@@ -246,8 +132,6 @@ const App = () => (
           />
           <ErrorMessage className="error" component="div" name="dateOfBirth" />
                </Box>
-        </div>
-        <div>
           <label htmlFor="email">Email</label>
           
           <Box paddingBottom={2}>
@@ -261,8 +145,8 @@ const App = () => (
           />
           <ErrorMessage className="error" component="div" name="email" />
            </Box>
-        </div>
-        <div>
+  
+
           <label htmlFor="team">Team</label>
           <Box paddingBottom={2}>
           <Field
@@ -275,8 +159,6 @@ const App = () => (
           />
           <ErrorMessage className="error" component="div" name="email" />
            </Box>
-        </div>
-        <div>
           <label htmlFor="about">About You</label>
           <Box paddingBottom={2}>
           <Field
@@ -289,26 +171,21 @@ const App = () => (
           />
           <ErrorMessage className="error" component="div" name="about" />
           </Box>
-        </div>
       </LadderStep>
       <LadderStep
         onSubmit={() => console.log('Step3 onSubmit')}
-        
-       
       >
-     {/* RIGHT HERE */}
-       
         </LadderStep>
     </Ladder>
     </Typography>
-    </CardContent>
-    </Card>
- 
-    </>
+    </div>
+
 
 );
 
 export default App;
+
+
 
 
 

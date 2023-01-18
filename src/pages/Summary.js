@@ -1,30 +1,31 @@
-import React, {useState} from 'react'
-import { Typography } from '@mui/material'
+import React from 'react'
+import { Typography, Box } from '@mui/material'
+import Container from '@mui/material/Container'
+import './App.css'
 
 const Summary =({...snapshot})=> {
-    console.log('Object.values(snapshot)', Object.values(snapshot))
    let snapshotVals = Object.values(snapshot)
    let snapshotKeys = Object.keys(snapshot)
     return (
-        <>
-        <Typography>
-
-            <h3>
+        <Container className='container'>
+        <Typography align='left' style={{marginTop: 30}} >
+        <h3>
         Make sure you entered your information correctly, or go back and edit it before you submit 
         </h3>
         {snapshotVals.map((value, i) => (
-            <h4>
-            <div key='i'>
-              {snapshotKeys[i]}
+            <Box>
+                <br/>
+            <div key={i}>
+              {snapshotKeys[i]}:
             </div>
              <div key='values'>
              {value}
-         </div>
-         </h4>
+           </div>
+         </Box>
         ))}
 
         </Typography>
-        </>
+        </Container>
     )
 }
 export default Summary;
