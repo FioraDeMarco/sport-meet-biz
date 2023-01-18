@@ -4,22 +4,23 @@ exports.test = function (req, res) {
     res.send('Greetings from the Test controller!');
 };
 
-
 exports.sportMeetBizCreate = function (req, res) {
 
 
     let sportMeetBiz = new sportMeetBiz(
-        {
-            firstName: req.body.firstName,
-    lastName:  req.body.lastName,
-    dateOfBirth:  req.body.gender,
-    sport:   req.body.sport,
-    gender:  req.body.gender,
-    location:  req.body.location,
-    email:  req.body.email,
-    team:  req.body.team,
-    about:  req.body.about,
-        }
+      {
+          
+       firstName: req.body.firstName,
+       lastName:  req.body.lastName,
+       dateOfBirth:  req.body.gender,
+       sport:   req.body.sport,
+       gender:  req.body.gender,
+       location:  req.body.location,
+       email:  req.body.email,
+       team:  req.body.team,
+       about:  req.body.about,
+
+       }
     );
 
     try {
