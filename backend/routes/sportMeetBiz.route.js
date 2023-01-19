@@ -3,7 +3,6 @@ const router = express.Router();
 let Profile = require('../models/sportMeetBiz.model')
 
 console.log('Hello world of pain')
-// a simple test url to check that all of our files are communicating correctly.
 
 // router.get('/test', sportMeetBizController.test);
 router.route('/').get((req, res) => {

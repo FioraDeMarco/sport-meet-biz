@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+sport-meet-biz 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Project Title
+This is the must have of any project. It is important to know what your project is going to be about and the title represents that.
 
-In the project directory, you can run:
+Project Description
+This is an important part of your project and what many developers and non-developers will look at. It is vital to have the most accurate and correct information. The description needs to be well written with no grammar errors and that is readable to users of multiple backgrounds. It is important to put some time and thought into writing the description of the project. It does not need to be long but needs to summarize the project. (What does your app do? What tech did you use?)
 
-### `npm start`
+Table of Contents (Optional)
+A table of contents is good if you have a lengthy README and can help users navigate to sections quickly but is not a must have.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Getting Started
+This section typically is brief and will list the pre-requisites that the user must have in order to start using the project code. This section can be similar or be combined with the Installation section. (Ex: Must have node -v)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Installation
+This is where you will list the full instructions for users on how they can install and start using your project. This should include multiple steps and have detailed descriptions and outcomes for users. It is important to take your time and write these steps as thoroughly as possible. This will help users a lot and will help prevent users from coming back and asking follow-up questions.
 
-### `npm test`
+Other Instructions, Specifications, Attributes, or Project Info
+This section(s) can include any other relevant project information. This can include information specific to a particular OS or Framework (Ex: Linux, React, etc). Certain projects have specific instructions and information that may need to have their own separate sections. As you develop your project you will get a better idea of what you need to include in your README and how to structure it.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Contributing
+It is important to list all the names and information of the people who've contributed to the project. Be sure to include their GitHub Profile Name and any other social media they may want to have listed. There are some cool markdown contributing badges that I will list in the Good Resources below.
 
-### `npm run build`
+Acknowledgements
+Similar to Contributing it is important to include all the sources that helped you complete this project. It's always good to give credit where credit is due.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+License
+Choose a license for your project. To learn more about license's check out choosealicense.com.

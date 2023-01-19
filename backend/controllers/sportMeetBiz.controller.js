@@ -32,15 +32,9 @@ exports.sportMeetBizCreate = function (req, res) {
         );
         return next(error);
       }
-      // this is just a object we send back to the front as confirmation. Don't know if we need it.
+  
       return res.status(201).json({ instance: sportMeetBiz });
 
-    // sportMeetBiz.save(function (err) {
-    //     if (err) {
-    //         return next(err);
-    //     }
-    //     res.send('Details Have Been Saved successfully')
-    // })
 };
 
 
